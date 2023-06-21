@@ -1,7 +1,4 @@
-echo "Enter a sentence"
+echo "Enter a string:"
 read string
-vowels=$(echo "$string" | tr -cd 'aeiouAEIOU' | wc -m)
-consonants=$(echo "$string" | tr -cd 'bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ' | wc -m)
-
-echo "Vowels: $vowels"
-echo "Consonants: $consonants"
+vowCount=$(echo $string | grep -o -i "[aeiou]" | wc --lines)
+echo "The given string has $vowCount vowels"
